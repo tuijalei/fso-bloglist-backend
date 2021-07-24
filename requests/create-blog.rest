@@ -1,9 +1,10 @@
-POST http://localhost:3003/api/blogs
+POST http://localhost:3001/api/blogs
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2xlaSIsImlkIjoiNjBmYWIyMzUxNTgwYjIyODg0ZmFmZmJhIiwiaWF0IjoxNjI3MDQyOTExLCJleHAiOjE2MjcwNDY1MTF9.LYmHYRtyTsnMvdj01fnvXKefbYjhpIAvr1tFQslXYA8
 
 {
-    "title": "Miun eka blogiäppi",
-    "author": "Miepä Mie",
+    "title": "Tokens testing 2",
+    "author": "Me myself and I",
     "url": "wwww.fullstäckiä.fi/blog",
-    "likes": 3
+    "likes": 10
 }

@@ -5,8 +5,7 @@ const logger = require('./utils/logger')
 
 const server = http.createServer(app)
 
-logger.info(`Something happening on port ${config.PORT}`)
-
+//Starting the connection to a specific port
 server.listen(config.PORT, () => {
-  console.log(`Server running on port ${config.PORT}`)
+  logger.info(`Server running on port ${config.PORT}`)
 })

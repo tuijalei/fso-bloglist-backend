@@ -1,0 +1,10 @@
+PUT http://localhost:3001/api/blogs/60f538736737ef417c405926
+Content-Type: application/json
+
+{
+    "title": "Miun eka blogiäppi",
+    "author": "Miepä Mie",
+    "url": "wwww.fullstäckiä.fi/blog",
+    "user": "60f9475300c3964dbcb597bd",
+    "likes": 10
+}
