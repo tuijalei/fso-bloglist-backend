@@ -1,2 +1,2 @@
 ## Full Stack open 2021
-osa 4, blogilista backend: 4.1-4.23
+part 4, blog list app, backend: 4.1-4.23
