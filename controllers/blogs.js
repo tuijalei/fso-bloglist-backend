@@ -36,7 +36,7 @@ blogsRouter.post('/', userExtractor, async (request, response) => {
 
   //If title nor url are set, statuscode 400
   if (!blog.title || !blog.url){
-    response.status(400).json({ error: 'title or url missing' })
+    response.status(400).json({ error: 'title or url missing' }).end()
   }
 
   const savedBlog = await blog.save()
