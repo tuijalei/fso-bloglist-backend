@@ -36,14 +36,14 @@ blogsRouter.post('/', userExtractor, async (request, response) => {
 
   //If title nor url are set, statuscode 400
   if (!blog.title || !blog.url){
-    response.status(400).json({ error: 'title or url missing' }).end()
+    return response.status(400).json({ error: 'title or url missing' }).end()
   }
 
   const savedBlog = await blog.save()
   user.blogs = user.blogs.concat(savedBlog._id)
   await user.save()
 
-  response.json(savedBlog)
+  response.status(201).json(savedBlog)
 })
 
 //Delete a blog
@@ -54,6 +54,8 @@ blogsRouter.delete('/:id', userExtractor, async (request, response) => {
   //Must be the blog's owner to delete it
   if(blog.user.toString() === user.id.toString()){
     await blog.remove()
+    user.blogs = user.blogs.filter(b => b.id.toString() !== request.params.id.toString())
+    await user.save()
     response.status(204).end()
   } else {
     response.status(400).json({ error: 'user is wrong' })
@@ -68,6 +70,8 @@ blogsRouter.put('/:id', async (request, response) => {
     url: request.body.url,
     likes: request.body.likes
   }
+
+  console.log(request.body)
 
   await Blog.findByIdAndUpdate(request.params.id, blog, { new: true })
 

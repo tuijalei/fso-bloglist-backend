@@ -1,8 +1,8 @@
-POST http://localhost:3001/api/users
+POST http://localhost:3003/api/users
 Content-Type: application/json
 
 {
-    "username": "miklei",
-    "name": "Mikko Leinonen",
-    "passwordHash": "salainen123"
+    "username": "testi_2",
+    "name": "Testi User",
+    "password": "salainen"
 }
